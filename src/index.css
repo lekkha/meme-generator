@@ -14,7 +14,7 @@ body {
 }
 
 main{
-  padding: 36px;
+  padding: 30px;
 }
 
 .header{
@@ -37,28 +37,35 @@ main{
 }
 
 .download-btn{
+  /* position: absolute; */
   color: white;
-  background-color: transparent;
-  border-radius: 20px;
-  border: 2px solid white;
+  background-color: var(--dark);
+  border-radius: 5px;
+  border: 2px solid var(--dark);
   font-size: 15px;
   padding: 8px;
-  margin-left: 45vw;
   font-weight: 500;
 }
 
 .form {
   display: grid;
   grid-template: 60px 40px / 1fr 1fr;
-  gap: 20px; 
+  gap: 10px; 
   /* min-width: 60vw; */
   max-width: 55vw;
   position: relative;
-  top: 40px; 
+  top: 10px; 
   left: 18vw;
 }
-
-.form--input {
+/* .top{
+  grid-column: span 2;
+  display: grid;
+}
+.bottom{
+  grid-column: span 2;
+  display: grid;
+} */
+.form--input{
   font-family: "Karla", sans-serif;
   border : 2px solid var(--dark);
   border-radius: 5px;
@@ -69,7 +76,7 @@ main{
 }
 
 .form--button{
-  grid-column: 1 / -1;
+  /* grid-column: span 3; */
   font-family: "Karla", sans-serif;
   border-radius: 5px;
   color: white;
@@ -85,4 +92,55 @@ main{
   font-size: 14px;
   margin-bottom: 5px;
   font-weight: 700;
+}
+
+.img--contianer {
+  position: relative;
+  top: 40px;
+  left: 28vw;
+  background-color: lightblue;
+  height: 350px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.meme--img{
+  /* instead of maxheight do height = 100% image takes full height for the div then */
+  height: 100%;
+  max-width: 100%;
+}
+
+.meme--text{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 15px 0;
+  padding: 0 5px;
+  font-family: impact, sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow:
+      2px 2px 0 #000,
+      -2px -2px 0 #000,
+      2px -2px 0 #000,
+      -2px 2px 0 #000,
+      0 2px 0 #000,
+      2px 0 0 #000,
+      0 -2px 0 #000,
+      -2px 0 0 #000,
+      2px 2px 5px #000;
+}
+.top{
+  max-width: 100%;
+  top: 0;
+}
+.bottom {
+  max-width: 100%;
+  bottom: 0;
 }
