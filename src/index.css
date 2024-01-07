@@ -144,3 +144,24 @@ main{
   max-width: 100%;
   bottom: 0;
 }
+
+.image-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.image-picker img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  cursor: pointer;
+}

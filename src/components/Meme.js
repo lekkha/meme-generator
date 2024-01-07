@@ -1,5 +1,5 @@
 import React from "react";
-import memesData from "../memesData";
+// import memesData from "../memesData";
 
 export default function Meme(){
 
@@ -9,19 +9,27 @@ export default function Meme(){
         randomImage : "http://i.imgflip.com/1bij.jpg"
     })
 
-    const [allMemeImages, setAllMemeImages] = React.useState(memesData)
+    const [allMeme, setAllMeme] = React.useState([])
+
+    //no dependency since we just need to take the image info in the all memes array only once 
+    React.useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+              .then((response) => response.json())
+              .then((data) => setAllMeme(data.data.memes))
+    }, [])
+
     
     //randomly generate memeimgae
     function getMemeImage() {
-        const memesArray = allMemeImages.data.memes
-        const randomNumber = Math.floor(Math.random() * memesArray.length)
-        const url = memesArray[randomNumber].url
+        // const memesArray = allMemeImages.data.memes ==> all memes is an array itself now
+        const randomNumber = Math.floor(Math.random() * allMeme.length)
+        const url = allMeme[randomNumber].url
         setMeme(prevMeme => ({
             ...prevMeme, 
             randomImage : url
         })) 
     }
-
+//controlled inputs + handel change to change input dynamically  
     function handleChange(event){
         const {name,value} = event.target
         setMeme(prevMeme => ({
