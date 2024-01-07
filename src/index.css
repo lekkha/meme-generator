@@ -45,6 +45,7 @@ main{
   font-size: 15px;
   padding: 8px;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .form {
@@ -96,15 +97,18 @@ main{
 
 .img--contianer {
   position: relative;
-  top: 40px;
-  left: 28vw;
+  /* top: 8vh;
+  left: 25vw;  */
+
   background-color: lightblue;
   height: 350px;
   width: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 8vh auto 0 auto; /* Adjust the margin instead of using top and left */
 }
+ 
 
 .meme--img{
   /* instead of maxheight do height = 100% image takes full height for the div then */
@@ -144,24 +148,28 @@ main{
   max-width: 100%;
   bottom: 0;
 }
-
-.image-picker {
+.image--picker{
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   position: absolute;
-  top: 100%;
-  left: 0;
+  /* center vertically and horizontally  */
+  top: 50%; 
+  left: 50%;
+  /* for centering the element wrt div  */
+  transform: translate(-50%, -50%);
   background-color: #fff;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
   z-index: 1;
 }
 
-.image-picker img {
+
+.image--picker > img{
   width: 50px;
   height: 50px;
   object-fit: cover;
   cursor: pointer;
 }
+
